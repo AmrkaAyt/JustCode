@@ -1,4 +1,4 @@
-package Task1
+package Tasks
 
 import "testing"
 
@@ -22,7 +22,7 @@ func TestLongestCommonPrefix(t *testing.T) {
 
 	for _, tc := range tests {
 		t.Run("", func(t *testing.T) {
-			result := longestCommonPrefix(tc.strs)
+			result := LongestCommonPrefix(tc.strs)
 
 			switch {
 			case tc.hasAns && result == tc.expected:
