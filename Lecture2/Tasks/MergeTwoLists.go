@@ -1,4 +1,6 @@
-package Task2
+package Tasks
+
+import "fmt"
 
 func MergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 	result := &ListNode{}
@@ -22,4 +24,13 @@ func MergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 	}
 
 	return result.Next
+}
+
+func PrintList(head *ListNode) {
+	current := head
+	for current != nil {
+		fmt.Print(current.Val, " ")
+		current = current.Next
+	}
+	fmt.Println()
 }
