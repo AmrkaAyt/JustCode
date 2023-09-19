@@ -1,4 +1,4 @@
-package Task1
+package Tasks
 
 import (
 	"reflect"
@@ -25,7 +25,7 @@ func TestHeapSort(t *testing.T) {
 	for _, test := range tests {
 		arr := make([]int, len(test.input))
 		copy(arr, test.input)
-		heapSort(arr)
+		HeapSort(arr)
 		if !reflect.DeepEqual(arr, test.expected) {
 			t.Errorf("For input %v, expected %v, but got %v", test.input, test.expected, arr)
 		}

@@ -1,4 +1,4 @@
-package Task1
+package Tasks
 
 // easiest sol
 // func twoSum(nums []int, target int) []int {

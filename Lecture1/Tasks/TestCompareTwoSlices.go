@@ -1,4 +1,4 @@
-package Task1
+package Tasks
 
 import "testing"
 
@@ -20,7 +20,7 @@ func TestCompareTwoSlices(t *testing.T) {
 
 	for _, tc := range tests {
 		t.Run("", func(t *testing.T) {
-			result := compareTwoSlices(tc.s1, tc.s2)
+			result := CompareTwoSlices(tc.s1, tc.s2)
 			if result != tc.expected {
 				t.Fatalf("Expected %v but got %v", tc.expected, result)
 			}
