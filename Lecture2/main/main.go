@@ -11,7 +11,7 @@ import (
 func main() {
 	babyToy := toys.NewBabyToy("Юла", 1500, "Юла Галактика 14 см для малышей", "0-3 годиков")
 	babyClothing := clothes.NewBabyClothes("Зимний компинизон", 25000, "Комбинезон утепленный Трансформер", "6-12 месяцев")
-	babyShoes := shoes.NewBabyShoes("Ботинки", 40000, "Обувь Passo, изготовленная без использования материалов животного происхождения.", "20", "Blue")
+	babyShoes := shoes.NewBabyShoes("Ботинки", 40000, "Обувь Passo, изготовленная без использования материалов животного происхождения.", "20")
 
 	productList := []products.Product{babyToy, babyClothing, babyShoes}
 

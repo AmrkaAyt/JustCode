@@ -7,7 +7,7 @@ type BabyShoes struct {
 	Size        string
 }
 
-func NewBabyShoes(name string, price float64, description string, size string, color string) *BabyShoes {
+func NewBabyShoes(name string, price float64, description string, size string) *BabyShoes {
 	return &BabyShoes{
 		Name:        name,
 		Price:       price,
