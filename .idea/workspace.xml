@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbc3f309-7f79-4193-95bf-e2f3d07c094f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Lecture1/Tasks/Sort.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lecture1/Tasks/TestCompareTwoSlices.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lecture1/Tasks/TestHeapSort.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lecture1/Tasks/TestLongestCommonPrefix.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lecture1/Tasks/TestTwoSum.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lecture1/Tasks/compareTwoSlices.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lecture1/Tasks/longestCommonPrefix.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lecture1/Tasks/twoSum.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Lecture2" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,14 +52,29 @@
     &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Lecture3&quot;,
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
     &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/amirzhan/LMSgo&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/amirzhan&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Lecture3" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Build.go build Lecture3/main">
+    <configuration name="go build Lecture3/main" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="JustCode" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="Lecture3/main" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/main/main.go" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="JustCode" />
       <working_directory value="$PROJECT_DIR$" />
@@ -77,6 +85,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build Lecture3/main" />
         <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build main.go" />
