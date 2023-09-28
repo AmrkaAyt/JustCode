@@ -8,12 +8,12 @@ import (
 )
 
 func main() {
-	fmt.Println("Пример с гонкой (race condition):")
+	fmt.Println("Пример race condition:")
 	Task1.RunRaceCond()
 
-	fmt.Println("\nПример своей реализации sync.Map с мьютексами:")
+	fmt.Println("\nПример sync Map с мьютексами:")
 	Task2.RunSyncMap()
 
-	fmt.Println("\nПример использования RWMutex:")
+	fmt.Println("\nПример RWMutex:")
 	Task3.RunRWMutex()
 }
