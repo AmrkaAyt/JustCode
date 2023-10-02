@@ -49,7 +49,6 @@ func RunSyncMap() {
 		inventory.SellItem("Ботинки", 20)
 	}()
 
-	// Ожидание завершения горутин
 	time.Sleep(time.Second)
 
 	fmt.Println("Остатки товаров:")
