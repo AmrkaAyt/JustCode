@@ -1,0 +1,6 @@
+FROM postgres:latest
+ENV POSTGRES_USER LMSuser
+ENV POSTGRES_PASSWORD password
+ENV POSTGRES_DB mydb
+CMD ["postgres"]
+

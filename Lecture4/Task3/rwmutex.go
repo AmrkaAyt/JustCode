@@ -3,7 +3,7 @@ package Task3
 import (
 	"fmt"
 	"net/http"
-	"strconv" // Импортируйте пакет strconv
+	"strconv"
 	"sync"
 )
 
@@ -17,8 +17,8 @@ func RunRWMutex() {
 		rwLock.RLock()
 		defer rwLock.RUnlock()
 		item := r.URL.Query().Get("item")
-		quantityStr := r.URL.Query().Get("quantity") // Получите строку quantity из URL
-		quantity, err := strconv.Atoi(quantityStr)   // Преобразуйте строку в int
+		quantityStr := r.URL.Query().Get("quantity")
+		quantity, err := strconv.Atoi(quantityStr)
 		if err != nil {
 			http.Error(w, "Invalid quantity", http.StatusBadRequest)
 			return
