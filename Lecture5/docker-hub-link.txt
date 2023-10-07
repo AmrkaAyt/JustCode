@@ -1,2 +1,0 @@
-https://hub.docker.com/repository/docker/amirzhan/lms_justcode/general
-https://docs.google.com/document/d/1LqRQO2prjtjNGUH72qaILWyZaGv3tvBU1JkDbr3p1vg/edit?usp=sharing
