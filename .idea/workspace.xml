@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbc3f309-7f79-4193-95bf-e2f3d07c094f" name="Changes" comment="1">
+    <list default="true" id="bbc3f309-7f79-4193-95bf-e2f3d07c094f" name="Changes" comment="1.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lecture4/Task1/race_cond.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lecture4/Task2/sync_map.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lecture4/Task3/rwmutex.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lecture4/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lecture4/main/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lecture5/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lecture5/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lecture5/docker-hub-link.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +143,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="1.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.1" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
