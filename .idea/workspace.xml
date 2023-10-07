@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbc3f309-7f79-4193-95bf-e2f3d07c094f" name="Changes" comment="1">
+    <list default="true" id="bbc3f309-7f79-4193-95bf-e2f3d07c094f" name="Changes" comment="1.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lecture4/Task2/sync_map.go" beforeDir="false" afterPath="$PROJECT_DIR$/Lecture4/Task2/sync_map.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lecture4/Task3/rwmutex.go" beforeDir="false" afterPath="$PROJECT_DIR$/Lecture4/Task3/rwmutex.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lecture4/Task1/race_cond.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lecture4/Task2/sync_map.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lecture4/Task3/rwmutex.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lecture4/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lecture4/main/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lecture5/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lecture5/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lecture5/docker-hub-link.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +40,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -44,30 +50,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Lecture4&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/amirzhan&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Lecture7",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "/home/amirzhan",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Lecture3" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build Lecture4/main">
+  <component name="RunManager" selected="Go Build.go build main.go (2)">
     <configuration name="go build Lecture3/main" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="JustCode" />
       <working_directory value="$PROJECT_DIR$" />
@@ -86,21 +92,37 @@
       <filePath value="$PROJECT_DIR$/Lecture4/main/main.go" />
       <method v="2" />
     </configuration>
-    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build main.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="JustCode" />
-      <working_directory value="$PROJECT_DIR$" />
+      <working_directory value="$PROJECT_DIR$/Lecture7" />
       <kind value="FILE" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/Lecture1/main/main.go" />
+      <filePath value="$PROJECT_DIR$/Lecture7/main/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build main.go (2)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="JustCode" />
+      <working_directory value="$PROJECT_DIR$/Lecture7" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/Lecture7/services/serviceA/main/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build main.go (3)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="JustCode" />
+      <working_directory value="$PROJECT_DIR$/Lecture7" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/Lecture7/services/serviceB/main/main.go" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build main.go (2)" />
+        <item itemvalue="Go Build.go build main.go (3)" />
+        <item itemvalue="Go Build.go build main.go (1)" />
         <item itemvalue="Go Build.go build Lecture4/main" />
         <item itemvalue="Go Build.go build Lecture3/main" />
-        <item itemvalue="Go Build.go build main.go" />
-        <item itemvalue="Go Build.go build main.go" />
-        <item itemvalue="Go Build.go build main.go" />
       </list>
     </recent_temporary>
   </component>
@@ -121,7 +143,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="1.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.1" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
