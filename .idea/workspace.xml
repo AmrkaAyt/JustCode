@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbc3f309-7f79-4193-95bf-e2f3d07c094f" name="Changes" comment="1.1">
-      <change afterPath="$PROJECT_DIR$/Lecture9/config/config.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lecture9/config/config.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lecture9/handlers/user_handler.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture10/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +54,7 @@
     &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Lecture9&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;lecture10&quot;,
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
     &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/amirzhan&quot;,
@@ -70,21 +69,14 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lecture10/config" />
+      <recent name="$PROJECT_DIR$/lecture10" />
       <recent name="$PROJECT_DIR$/Lecture9/main" />
       <recent name="$PROJECT_DIR$/Lecture9" />
       <recent name="$PROJECT_DIR$/Lecture3" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build Lecture9/main">
-    <configuration name="go build Lecture4/main" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="JustCode" />
-      <working_directory value="$PROJECT_DIR$/Lecture4" />
-      <kind value="PACKAGE" />
-      <package value="Lecture4/main" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/Lecture4/main/main.go" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Build.go build main.go">
     <configuration name="go build Lecture9/main" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="JustCode" />
       <working_directory value="$PROJECT_DIR$/Lecture9" />
@@ -118,13 +110,21 @@
       <filePath value="$PROJECT_DIR$/Lecture7/services/serviceB/main/main.go" />
       <method v="2" />
     </configuration>
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="JustCode" />
+      <working_directory value="$PROJECT_DIR$/lecture10" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/lecture10/cmd/main.go" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build Lecture9/main" />
         <item itemvalue="Go Build.go build main.go (2)" />
         <item itemvalue="Go Build.go build main.go (3)" />
         <item itemvalue="Go Build.go build main.go (1)" />
-        <item itemvalue="Go Build.go build Lecture4/main" />
       </list>
     </recent_temporary>
   </component>
