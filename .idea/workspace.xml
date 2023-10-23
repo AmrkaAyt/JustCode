@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbc3f309-7f79-4193-95bf-e2f3d07c094f" name="Changes" comment="1.1">
-      <change afterPath="$PROJECT_DIR$/Lecture9/config/config.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lecture9/config/config.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lecture9/handlers/user_handler.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lecture9/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/Lecture9/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lecture9/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/Lecture9/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lecture9/handlers/user_handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Lecture9/handlers/user_handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lecture9/main/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/Lecture9/main/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

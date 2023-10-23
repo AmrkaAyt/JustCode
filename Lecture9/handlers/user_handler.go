@@ -3,17 +3,21 @@ package handlers
 import (
 	"Lecture9/internal/user/entity"
 	"Lecture9/internal/user/repository"
+	"context"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"github.com/go-redis/redis/v8"
+	"github.com/goccy/go-json"
 	"golang.org/x/crypto/bcrypt"
 	"log"
 	"net/http"
 	"strconv"
+	"time"
 )
 
 var userRepository repository.UserRepositoryInterface
 
-func RegisterHandler(c *gin.Context, userRepository repository.UserRepositoryInterface) {
+func RegisterHandler(c *gin.Context, userRepository repository.UserRepositoryInterface, redisClient *redis.Client) {
 	var user entity.User
 	if err := c.ShouldBindJSON(&user); err != nil {
 		log.Printf("Error: %v\n", err)
@@ -35,9 +39,6 @@ func RegisterHandler(c *gin.Context, userRepository repository.UserRepositoryInt
 		return
 	}
 
-	query := "INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING id"
-	fmt.Printf("SQL Query: %s\n", query)
-
 	userID, err := userRepository.Register(c, user, hashedPassword)
 	if err != nil {
 		log.Printf("Error registering user: %v\n", err)
@@ -47,7 +48,38 @@ func RegisterHandler(c *gin.Context, userRepository repository.UserRepositoryInt
 
 	fmt.Printf("User registered successfully with ID: %d\n", userID)
 
+	registeredUser, err := userRepository.GetById(c, userID)
+	if err != nil {
+		log.Printf("Error fetching registered user: %v\n", err)
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to fetch registered user"})
+		return
+	}
+
+	if registeredUser == nil {
+		log.Printf("Registered user not found")
+		c.JSON(http.StatusNotFound, gin.H{"error": "Registered user not found"})
+		return
+	}
+
+	SaveUserToRedis(redisClient, *registeredUser)
+
 	c.JSON(http.StatusOK, gin.H{"message": "User registered successfully"})
+}
+
+func SaveUserToRedis(redisClient *redis.Client, user entity.User) {
+	userJSON, err := json.Marshal(user)
+	if err != nil {
+		log.Printf("Error marshalling user: %v\n", err)
+		return
+	}
+
+	ctx := context.Background()
+	key := "user:" + strconv.Itoa(user.ID)
+
+	_, err = redisClient.Set(ctx, key, userJSON, 5*time.Minute).Result()
+	if err != nil {
+		log.Printf("Error storing user in Redis: %v\n", err)
+	}
 }
 
 func LoginHandler(c *gin.Context, userRepository repository.UserRepositoryInterface) {
@@ -67,7 +99,7 @@ func LoginHandler(c *gin.Context, userRepository repository.UserRepositoryInterf
 
 	if err != nil {
 		log.Printf("Error: %v\n", err)
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()}) // Log the error
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
 
@@ -89,30 +121,50 @@ func GetAllUsersHandler(c *gin.Context, userRepository repository.UserRepository
 
 	c.JSON(http.StatusOK, users)
 }
-func GetUserByIDHandler(c *gin.Context, userRepository repository.UserRepositoryInterface) {
+func GetUserByIDHandler(c *gin.Context, userRepository repository.UserRepositoryInterface, redisClient *redis.Client) {
 	userIDStr := c.Param("id")
-
 	userID, err := strconv.Atoi(userIDStr)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid user ID"})
 		return
 	}
 
-	user, err := userRepository.GetById(c, userID)
-	if err != nil {
-		log.Printf("Error fetching user: %v\n", err)
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to fetch user"})
-		return
+	ctx := context.Background()
+	key := "user:" + userIDStr
+	userJSON, err := redisClient.Get(ctx, key).Result()
+
+	if err == redis.Nil {
+		user, err := userRepository.GetById(c, userID)
+		if err != nil {
+			log.Printf("Error fetching user: %v\n", err)
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to fetch user"})
+			return
+		}
+
+		if user == nil {
+			c.JSON(http.StatusNotFound, gin.H{"error": "User not found"})
+			return
+		}
+
+		userJSON, err := json.Marshal(user)
+		if err != nil {
+			log.Printf("Error marshalling user: %v\n", err)
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to marshal user"})
+			return
+		}
+
+		_, err = redisClient.Set(ctx, key, userJSON, 5*time.Minute).Result()
+		if err != nil {
+			log.Printf("Error storing user in Redis: %v\n", err)
+		}
+	} else if err != nil {
+		log.Printf("Error fetching user from Redis: %v\n", err)
 	}
 
-	if user == nil {
-		c.JSON(http.StatusNotFound, gin.H{"error": "User not found"})
-		return
-	}
-
-	c.JSON(http.StatusOK, user)
+	c.Writer.Header().Set("Content-Type", "application/json")
+	c.Writer.WriteHeader(http.StatusOK)
+	c.Writer.Write([]byte(userJSON))
 }
-
 func UpdateUserHandler(c *gin.Context, userRepository repository.UserRepositoryInterface) {
 	userIDStr := c.Param("id")
 	userID, err := strconv.Atoi(userIDStr)
