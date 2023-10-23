@@ -1,0 +1,11 @@
+database:
+  driver: postgres
+  host: localhost
+  port: 5432
+  user: postgres
+  password: 773504ok
+  dbname: lecture9
+
+http-server:
+  port: 6060
+  shutdown-timeout: 2m
