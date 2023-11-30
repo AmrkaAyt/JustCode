@@ -1,3 +1,4 @@
+// main.go
 package main
 
 import (
@@ -10,7 +11,6 @@ import (
 	"lecture10/internal/user/database"
 	"lecture10/internal/user/repository"
 	"log"
-	_ "os"
 )
 
 func main() {
@@ -24,7 +24,8 @@ func main() {
 
 	log.Printf("AppConfig: %+v", appConfig)
 
-	db, err := database.NewDBConnection(configPath)
+	// Use the configuration values directly from appConfig
+	db, err := database.NewDBConnection(appConfig.Database)
 	if err != nil {
 		log.Fatalf("Error initializing database: %v", err)
 	}
@@ -32,9 +33,9 @@ func main() {
 
 	ctx := context.Background()
 	redisClient := redis.NewClient(&redis.Options{
-		Addr:     "localhost:6379",
-		Password: "773504ok",
-		DB:       0,
+		Addr:     appConfig.Redis.Addr,
+		Password: appConfig.Redis.Password,
+		DB:       appConfig.Redis.DB,
 	})
 
 	_, err = redisClient.Ping(ctx).Result()
@@ -44,29 +45,7 @@ func main() {
 
 	userRepository := repository.NewUserRepository(db)
 
-	r.POST("/users/register", func(c *gin.Context) {
-		handlers.RegisterHandler(c, userRepository, redisClient)
-	})
-
-	r.POST("/users/login", func(c *gin.Context) {
-		handlers.LoginHandler(c, userRepository)
-	})
-
-	r.GET("/users", func(c *gin.Context) {
-		handlers.GetAllUsersHandler(c, userRepository)
-	})
-
-	r.GET("/users/:id", func(c *gin.Context) {
-		handlers.GetUserByIDHandler(c, userRepository, redisClient)
-	})
-
-	r.PUT("/users/:id", func(c *gin.Context) {
-		handlers.UpdateUserHandler(c, userRepository)
-	})
-
-	r.DELETE("/users/:id", func(c *gin.Context) {
-		handlers.DeleteUserHandler(c, userRepository)
-	})
+	// Your route handlers...
 
 	port := appConfig.HttpServer.Port
 	log.Printf("Server will run on port: %d", port)
