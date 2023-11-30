@@ -1,45 +1,27 @@
+// config/config.go
 package config
 
 import (
-	"gopkg.in/yaml.v3"
-	"os"
-	"time"
+	"fmt"
+	"github.com/spf13/viper"
 )
 
-type DatabaseConfig struct {
-	Driver   string `mapstructure:"driver"`
-	Host     string `mapstructure:"host"`
-	Port     int    `mapstructure:"port"`
-	User     string `mapstructure:"user"`
-	Password string `mapstructure:"password"`
-	DBName   string `mapstructure:"dbname"`
-}
-
-type HttpServerConfig struct {
-	Port            int           `mapstructure:"port"`
-	ShutdownTimeout time.Duration `mapstructure:"shutdown-timeout"`
-}
-
 type AppConfig struct {
-	Database   DatabaseConfig `yaml:"database"`
 	HttpServer struct {
-		Port            int           `yaml:"port"`
-		ShutdownTimeout time.Duration `yaml:"shutdown-timeout"`
-	} `yaml:"http-server"`
+		Port int `yaml:"Port"`
+	} `yaml:"HttpServer"`
 }
 
 func LoadConfig(configPath string) (*AppConfig, error) {
-	configFile, err := os.Open(configPath)
-	if err != nil {
-		return nil, err
-	}
-	defer configFile.Close()
-
-	config := &AppConfig{}
-	decoder := yaml.NewDecoder(configFile)
-	if err := decoder.Decode(config); err != nil {
-		return nil, err
+	viper.SetConfigFile(configPath)
+	if err := viper.ReadInConfig(); err != nil {
+		return nil, fmt.Errorf("error reading config file: %v", err)
 	}
 
-	return config, nil
+	var appConfig AppConfig
+	if err := viper.Unmarshal(&appConfig); err != nil {
+		return nil, fmt.Errorf("error unmarshalling config: %v", err)
+	}
+
+	return &appConfig, nil
 }
